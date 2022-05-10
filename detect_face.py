@@ -24,7 +24,7 @@ def detect_a_face ():
 
                 if len(faces) !=0 : 
                         t1 = time.ctime()
-                        print("Face found at ime : "+str(t1))
+                        print("Face found at time : "+str(t1))
                         b=True
                         return b
 
