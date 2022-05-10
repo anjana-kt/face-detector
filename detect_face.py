@@ -3,16 +3,15 @@ import dlib
 import time
 
 def detect_a_face ():
-        t1,t2=0,0     
+        t1=0   
         face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
         cap = cv2.VideoCapture(0)
-
-
+        b=False
         while True :
                 _, img = cap.read()
-                b=False
+                
                 if not _:
-                        print("Can't receive frame (stream end?). Exiting ...")
+                        print("Can't receive frame. Exiting ...")
                         break
 
                 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
@@ -24,7 +23,8 @@ def detect_a_face ():
                         cv2.rectangle(img, (x, y), (x+w, y+h), (255, 0, 0), 2)
 
                 if len(faces) !=0 : 
-                        t1 = time.time()
+                        t1 = time.ctime()
+                        print("Face found at ime : "+str(t1))
                         b=True
                         return b
 
@@ -34,7 +34,7 @@ def detect_a_face ():
                         
                 cv2.imshow('img', img)
 
-                cap.release()
-                return b
-
-print(detect_a_face())
+        cap.release()
+                
+k=(detect_a_face())               
+print(str(k))
