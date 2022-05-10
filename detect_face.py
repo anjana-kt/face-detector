@@ -7,7 +7,7 @@ def detect_a_face ():
         face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
         cap = cv2.VideoCapture(0)
         b=False
-        while time.time()-t1 < 5:
+        while time.time()-t1 < 10:
                 _, img = cap.read()
                 
                 if not _:
