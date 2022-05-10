@@ -3,11 +3,11 @@ import dlib
 import time
 
 def detect_a_face ():
-        t1=0   
+        t1=time.time()  
         face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
         cap = cv2.VideoCapture(0)
         b=False
-        while True :
+        while time.time()-t1 < 5:
                 _, img = cap.read()
                 
                 if not _:
@@ -35,6 +35,7 @@ def detect_a_face ():
                 cv2.imshow('img', img)
 
         cap.release()
+        return False
                 
 k=(detect_a_face())               
 print(str(k))
